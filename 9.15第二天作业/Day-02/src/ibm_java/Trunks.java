@@ -10,7 +10,7 @@ public class Trunks extends Vehicles{
 	   }
 	  public void ShowTrunk()
 	  {
-		  System.out.println("ÉÌ±ê£º"+brand+"ÑÕÉ«£º"+color+"ÔØÖØ£º"+load); 
+		  System.out.println("å•†æ ‡ï¼š"+brand+"é¢œè‰²ï¼š"+color+"è½½é‡ï¼š"+load); 
 		  
 		  
 	  }
