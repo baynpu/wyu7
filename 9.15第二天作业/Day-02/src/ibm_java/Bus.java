@@ -2,9 +2,9 @@ package ibm_java;
 
 public class Bus implements Vehicle2 {
 	public void stop() {
-		  System.out.println("¹«½»³µÍ£Ö¹");
+		  System.out.println("å…¬äº¤è½¦åœæ­¢");
 	  }
 	  public void start() {
-		  System.out.println("¹«½»³µÆô¶¯");
+		  System.out.println("å…¬äº¤è½¦å¯åŠ¨");
 	  }
 }
