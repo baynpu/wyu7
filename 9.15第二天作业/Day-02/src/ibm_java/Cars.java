@@ -10,7 +10,7 @@ public class Cars extends Vehicles{
    }
   public void ShowCar()
   {
-	  System.out.println("ÉÌ±ê£º"+brand+"ÑÕÉ«£º"+color+"×ùÎ»Êı£º"+seats); 
+	  System.out.println("å•†æ ‡ï¼š"+brand+"é¢œè‰²ï¼š"+color+"åº§ä½æ•°ï¼š"+seats); 
 	  
 	  
   }
