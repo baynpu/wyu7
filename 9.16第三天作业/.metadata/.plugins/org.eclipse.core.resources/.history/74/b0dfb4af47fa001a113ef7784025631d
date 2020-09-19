@@ -1,0 +1,56 @@
+package Day_03;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+public class EmpInput {
+	public static void main(String[] args) throws ParseException, IOException {
+		int num = getSum();
+		for(int i=1;i<=num;i++){
+			System.out.println("请输入第"+i+"个员工信息:");
+			//将当前员工信息写入文件
+			Emp emp = writeEmp();
+			wirteFile(emp);
+		}
+		System.out.println("解析完毕");
+	}
+	//员工人数限制
+	public static int getSum(){
+		Scanner scan = new Scanner(System.in);
+		for(;;){
+			System.out.println("请输入员工人数:");
+			int num = Integer.parseInt(scan.nextLine().trim());
+			if(num <5){
+				scan.close();
+				return num;
+			}
+		}
+	}
+	//将对象写入文件
+	public static void wirteFile(Emp emp) throws IOException{
+		FileOutputStream fos = new FileOutputStream(emp.getName()+".obj");
+		ObjectOutputStream oos =new ObjectOutputStream(fos);
+		oos.writeObject(emp);
+		oos.close();
+	}
+	//传入一个员工的字符串信息,解析成员工对象--格式如:张三,25,男,5000,2006-3-18
+	public static Emp writeEmp() throws ParseException{
+		Scanner scan = new Scanner(System.in);
+		String input = scan.nextLine().trim();
+		String[] infor = input.split(",");
+		String name = infor[0];
+		int age = Integer.parseInt(infor[1]);
+		String gender = infor[2];
+		int salary = Integer.parseInt(infor[3]);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date hiredate = sdf.parse(infor[4]);
+		scan.close();
+		return new Emp(name,age,gender,salary,hiredate);
+	}
+}
+

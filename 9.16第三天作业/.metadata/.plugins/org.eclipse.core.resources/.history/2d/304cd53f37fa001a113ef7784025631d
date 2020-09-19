@@ -1,0 +1,95 @@
+package Day_03;
+
+import java.util.Date;
+public class Emp {
+   private String name;
+   private int age;
+   private String gender;
+   private int salary;
+   private Date hireaDate;
+public Emp(String name, int age, String gender, int salary, Date hireaDate) {
+	super();
+	this.name = name;
+	this.age = age;
+	this.gender = gender;
+	this.salary = salary;
+	this.hireaDate = hireaDate;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public int getAge() {
+	return age;
+}
+public void setAge(int age) {
+	this.age = age;
+}
+public String getGender() {
+	return gender;
+}
+public void setGender(String gender) {
+	this.gender = gender;
+}
+public int getSalary() {
+	return salary;
+}
+public void setSalary(int salary) {
+	this.salary = salary;
+}
+@Override
+public String toString() {
+	return "Emp [name=" + name + ", age=" + age + ", gender=" + gender + ", salary=" + salary + ", getHireaDate()=" + getHireaDate() + "]";
+}
+public String getHireaDate() {
+	String s1=String.format("%tf", hireaDate);
+	return s1;
+}
+public void setHireaDate(Date hireaDate) {
+	this.hireaDate = hireaDate;
+	
+}
+
+
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Emp other = (Emp) obj;
+	if (age != other.age)
+		return false;
+	if (gender == null) {
+		if (other.gender != null)
+			return false;
+	} else if (!gender.equals(other.gender))
+		return false;
+	if (hireaDate == null) {
+		if (other.hireaDate != null)
+			return false;
+	} else if (!hireaDate.equals(other.hireaDate))
+		return false;
+	if (name == null) {
+		if (other.name != null)
+			return false;
+	} else if (!name.equals(other.name))
+		return false;
+	if (salary != other.salary)
+		return false;
+	return true;
+}
+public static void main(String[] args) {
+	Emp emp=new Emp("Jack", 21, "ÄÐ", 2000, new Date());
+	Emp emp1=new Emp("Jack", 21, "ÄÐ", 2000, new Date());
+	System.out.println(emp);
+	System.out.println(emp.equals(emp1));
+	
+	
+}   
+   
+}
